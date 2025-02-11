@@ -1,0 +1,16 @@
+[database]
+host = "localhost"
+port = 3306
+username = "root"
+password = "password123"  # Mot de passe en texte clair
+db_name = "production_db"
+
+[security]
+encryption_enabled = false  # Chiffrement désactivé
+api_key = "supersecretapikey"  # Clé API en texte clair
+allow_remote_access = true  # Accès distant autorisé sans restriction
+
+[logging]
+log_level = "debug"  # Niveau de log trop verbeux
+log_to_file = true
+log_file_path = "/var/log/application.log"

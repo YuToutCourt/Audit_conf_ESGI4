@@ -1,0 +1,18 @@
+projects:
+  - 'my_project':
+      project_visibility: 'public'
+      project_pages_access_level: 'public'
+      project_security_and_compliance_enabled: false
+      project_approvals_before_merge: 0
+      project_push_rules_unsigned_commits: false
+      project_push_rules_comitter_check: false
+      project_protected_branches: false
+      project_access_tokens: true
+      project_deploy_tokens: true
+      project_deploy_keys: true
+      project_file_pipeline: false
+      project_merged_pipeline: false
+      project_file_codeowners: false
+      project_shared_runners_enabled: true
+      project_runners_shared: true
+      project_runners_notshared: false

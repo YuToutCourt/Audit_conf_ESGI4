@@ -1,0 +1,96 @@
+PROJECT_CONFIG_VULNERABILITIES = {
+    "project_visibility": {
+        "vuln": "Visibilité publique du projet",
+        "explanation": "Un projet configuré en 'public' peut exposer des informations sensibles à tout le monde sur Internet.",
+        "recommendation": "Restreindre la visibilité à 'private' ou 'internal' selon le niveau de confidentialité requis."
+    },
+    "project_pages_access_level": {
+        "vuln": "Accès public aux pages du projet",
+        "explanation": "Permettre un accès public aux pages du projet expose potentiellement des informations sensibles qui devraient être restreintes.",
+        "recommendation": "Restreindre l'accès aux pages sensibles à des utilisateurs authentifiés ou le limiter à un groupe restreint."
+    },
+    "project_security_and_compliance_enabled": {
+        "vuln": "Sécurité et conformité désactivées",
+        "explanation": "Désactiver la sécurité et la conformité peut rendre le projet vulnérable à des attaques ou à des violations de normes de sécurité.",
+        "recommendation": "Activer la sécurité et la conformité pour assurer que le projet respecte les politiques de sécurité et les normes de conformité."
+    },
+    "project_approvals_before_merge": {
+        "vuln": "Pas d'approbation avant la fusion",
+        "explanation": "L'absence d'approbation avant fusion permet à des modifications non vérifiées d'être intégrées, ce qui peut compromettre la qualité et la sécurité.",
+        "recommendation": "Exiger au moins une approbation avant la fusion pour garantir que les modifications sont revues par un autre développeur."
+    },
+    "project_push_rules_unsigned_commits": {
+        "vuln": "Les commits non signés sont autorisés",
+        "explanation": "Permettre des commits non signés ouvre la porte à des modifications non vérifiables, ce qui peut mener à l'injection de code malveillant.",
+        "recommendation": "Activer les règles pour interdire les commits non signés, garantissant ainsi l'intégrité du code."
+    },
+    "project_push_rules_comitter_check": {
+        "vuln": "Vérification du committeur désactivée",
+        "explanation": "L'absence de vérification du committeur peut permettre à un utilisateur non autorisé de modifier le code sous l'identité d'un autre.",
+        "recommendation": "Activer la vérification du committeur pour s'assurer que les commits sont effectués par des utilisateurs autorisés."
+    },
+    "project_protected_branches": {
+        "vuln": "Branches non protégées",
+        "explanation": "Les branches non protégées peuvent être modifiées sans restriction, ce qui permet à des erreurs ou à des modifications non approuvées de s'introduire dans le code.",
+        "recommendation": "Activer les branches protégées pour empêcher les modifications non autorisées sur les branches principales comme 'main' ou 'master'."
+    },
+    "project_access_tokens": {
+        "vuln": "Tokens d'accès non sécurisés",
+        "explanation": "L'utilisation de tokens d'accès non sécurisés peut exposer des informations sensibles si ces tokens sont fuités.",
+        "recommendation": "S'assurer que les tokens d'accès sont correctement sécurisés et utilisés uniquement lorsque nécessaire."
+    },
+    "project_deploy_tokens": {
+        "vuln": "Tokens de déploiement non sécurisés",
+        "explanation": "Les tokens de déploiement non sécurisés peuvent permettre à un attaquant d'effectuer des déploiements non autorisés.",
+        "recommendation": "Sécuriser les tokens de déploiement et limiter leur utilisation aux processus de déploiement vérifiés."
+    },
+    "project_deploy_keys": {
+        "vuln": "Clés de déploiement non sécurisées",
+        "explanation": "Les clés de déploiement non sécurisées exposent le projet à des risques d'accès non autorisé lors des déploiements.",
+        "recommendation": "S'assurer que les clés de déploiement sont sécurisées et utilisées uniquement dans les environnements de production."
+    },
+    "project_file_pipeline": {
+        "vuln": "Pipeline de fichiers non activé",
+        "explanation": "Ne pas activer les pipelines de fichiers peut empêcher une automatisation correcte des tests et des déploiements, ce qui peut rendre le processus vulnérable.",
+        "recommendation": "Activer le pipeline de fichiers pour assurer que les tests et les déploiements sont automatisés et vérifiés."
+    },
+    "project_merged_pipeline": {
+        "vuln": "Pipeline de fusion non activé",
+        "explanation": "Ne pas activer les pipelines de fusion peut mener à des erreurs ou à des incohérences dans les branches fusionnées, en particulier lors des mises à jour de code.",
+        "recommendation": "Activer le pipeline de fusion pour garantir que toutes les modifications sont testées avant d'être fusionnées dans la branche principale."
+    },
+    "project_file_codeowners": {
+        "vuln": "Codeowners non configuré",
+        "explanation": "Ne pas configurer les codeowners peut mener à une gestion désorganisée des autorisations sur le code, rendant les révisions de code plus difficiles.",
+        "recommendation": "Configurer le fichier CODEOWNERS pour attribuer clairement les responsabilités de révision de code."
+    },
+    "project_shared_runners_enabled": {
+        "vuln": "Runners partagés activés",
+        "explanation": "Les runners partagés peuvent poser un risque de sécurité car ils sont utilisés par plusieurs projets et peuvent partager des ressources sensibles.",
+        "recommendation": "Désactiver les runners partagés et utiliser des runners spécifiques au projet pour limiter l'accès à des ressources sensibles."
+    },
+    "project_runners_shared": {
+        "vuln": "Runners partagés autorisés",
+        "explanation": "L'utilisation de runners partagés autorisés peut entraîner des risques de sécurité si un autre projet malveillant utilise les mêmes ressources.",
+        "recommendation": "Désactiver l'utilisation des runners partagés pour renforcer la sécurité."
+    },
+    "project_runners_notshared": {
+        "vuln": "Runners non partagés activés",
+        "explanation": "Permettre des runners non partagés peut augmenter la complexité et le coût de l'infrastructure, mais peut améliorer la sécurité.",
+        "recommendation": "Activer des runners non partagés si la sécurité et l'isolation des processus sont prioritaires."
+    }
+}
+
+# Ajouter une nouvelle catégorie pour les erreurs de configuration
+CONFIGURATION_ERRORS = {
+    "incorrect_permissions": {
+        "vuln": "Permissions incorrectes",
+        "explanation": "Des permissions incorrectes sur des fichiers ou répertoires peuvent permettre un accès non autorisé.",
+        "recommendation": "Vérifiez les permissions et assurez-vous qu'elles sont restreintes au minimum nécessaire."
+    },
+    "unused_groups": {
+        "vuln": "Groupes inutilisés",
+        "explanation": "Des groupes inutilisés ou mal configurés peuvent présenter des risques de sécurité.",
+        "recommendation": "Désactivez ou supprimez les groupes inutilisés dans la configuration."
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "token": "abc123",
+  "password": "mySuperSecretPassword",
+  "security_compliance": false
+}

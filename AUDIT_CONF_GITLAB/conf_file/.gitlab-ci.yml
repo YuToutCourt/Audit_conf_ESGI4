@@ -1,0 +1,14 @@
+stages:
+  - build
+  - deploy
+
+build:
+  script:
+    - echo "Building project"
+    - curl --insecure https://example.com/build
+
+deploy:
+  script:
+    - echo "Deploying project"
+    - wget --no-check-certificate https://example.com/deploy
+    - echo "SECRET_KEY=12345"  # Secret exposé
