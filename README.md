@@ -15,6 +15,8 @@ Ce dépôt regroupe tous les scripts et outils d'audit de configuration réalis�
 
 🔹 **NodeAudit**
 
+🔹 **SQLAudit**
+
 ## 🚀 Objectif  
 
 L'objectif de ce projet est de centraliser et partager les outils d'audit développés en classe afin d'améliorer nos compétences en **sécurité offensive** et **hardening système**.  
