@@ -1,9 +1,6 @@
 import os
 import subprocess
 
-Bienvenue dans Mini Audit - Outil d'audit Kubernetes pour Minikube!
-""")
-
 # Fonction pour vérifier si kubectl est configuré
 def check_kubectl():
     try:
@@ -14,31 +11,31 @@ def check_kubectl():
 
 # Fonction pour lister les pods en cours d'exécution
 def audit_pods():
-    print("=== Pods en cours d'exécution ===")
+    print("\n=== Pods en cours d'exécution ===")
     result = subprocess.run(["kubectl", "get", "pods", "--all-namespaces"], capture_output=True, text=True)
     print(result.stdout)
 
 # Fonction pour vérifier les secrets non chiffrés
 def audit_secrets():
-    print("=== Secrets non chiffrés ===")
+    print("\n=== Secrets non chiffrés ===")
     command = "kubectl get secrets --all-namespaces -o jsonpath='{range .items[*]}{.metadata.name}{\"\\t\"}{.type}{\"\\n\"}{end}' | grep 'Opaque'"
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
     print(result.stdout)
 
 # Fonction pour vérifier les RBAC (rôles et permissions)
 def audit_rbac():
-    print("=== Rôles et rôles liés au cluster ===")
+    print("\n=== Rôles et rôles liés au cluster ===")
     subprocess.run(["kubectl", "get", "roles", "--all-namespaces"])
     subprocess.run(["kubectl", "get", "clusterroles"])
 
 # Fonction pour vérifier les NetworkPolicies
 def audit_network_policies():
-    print("=== NetworkPolicies configurées ===")
+    print("\n=== NetworkPolicies configurées ===")
     subprocess.run(["kubectl", "get", "networkpolicies", "--all-namespaces"])
 
 # Fonction pour vérifier les images des pods
 def audit_pod_images():
-    print("=== Images des pods et leurs versions ===")
+    print("\n=== Images des pods et leurs versions ===")
     command = "kubectl get pods --all-namespaces -o jsonpath='{range .items[*]}{.spec.containers[*].image}{\"\\n\"}{end}'"
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
     print(result.stdout)
@@ -55,7 +52,7 @@ def full_audit():
 def show_menu():
     while True:
         os.system('clear') if os.name == 'posix' else os.system('cls')
-        display_ascii_art()
+        print("Mini Audit - Outil d'audit Kubernetes pour Minikube\n")
         print("Menu d'audit Kubernetes :")
         print("1. Auditer les pods en cours d'exécution")
         print("2. Auditer les secrets non chiffrés")
