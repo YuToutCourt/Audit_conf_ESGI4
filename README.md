@@ -21,6 +21,7 @@ Ce dépôt regroupe tous les scripts et outils d'audit de configuration réalis�
 
 🔹 **NGINXAudit**
 
+🔹 **MinikubeAudit**
 
 ## 🚀 Objectif  
 
